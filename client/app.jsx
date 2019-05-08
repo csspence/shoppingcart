@@ -5,28 +5,51 @@ class App extends React.Component {
     constructor(props) {
        super(props);
        this.state = {
-        //    currentPage : 
+         currentPage : 1,
+        //  formOneData : ,
+        //  formTwoData : ,
+        //  formTwoData : ,
+        //  confirmationData : formOneData + formTwoData + formThreeData
        }
     }
-//figure out conditional rendering (use state)
+
     render() {
+       if(this.state.currentPage === 2) {
+        return (
+            <div>
+                Crew's Stuff Store
+                <FormTwo/>
+            </div>
+         );
+       }
+       if(this.state.currentPage === 3) {
+        return (
+            <div>
+                Crew's Stuff Store
+                <FormThree/>
+            </div>
+         );
+       }
        return (
-          <div>
-              Crew's Stuff Store
-             <FormThree/>
-          </div>
-       );
+        <div>
+            Crew's Stuff Store
+            <FormOne/>
+        </div>
+     );
+    //    if(this.state.currentPage === <ConfirmationPage/>) {
+    //     return (
+    //         <div>
+    //             Crew's Stuff Store
+    //             <ConfirmationPage/>
+    //         </div>
+    //      );
+    //    }
+       
     }
  }
 
-//  window.onload = function (){
-//     ReactDOM.render(
-//       <BrowserRouter>
-//         <App/>
-//       </BrowserRouter>
-//         , document.getElementById('root')
-//       );
-//   }
+
+//  react.componentWillMount
 
 
 
@@ -51,7 +74,7 @@ class App extends React.Component {
             <input type="password" name="name" />
           </label>
           <br></br> <br></br>
-            <input id="formOneSubmit" type="submit" value="Continue to next step" onClick={submitFormOne} />
+            <input id="formOneSubmit" type="submit" value="Continue to next step" onClick={props.submitFormOne} />
         </form>
       </div>
     );
@@ -122,13 +145,25 @@ function FormThree(props) {
     );
   }
 
+  /*--------------------------------------------------
+------------------Confirmation Page-
+---------------------------------------------------*/
+//this will be a get request and change what is rendered on screen
+
 
   /*--------------------------------------------------
 ------------First Continue Button-
 ---------------------------------------------------*/
-const submitFormOne = () => {
+const submitFormOne = (event) => {
   //will invoke get request
-   //then it'll render the second form
+  console.log('the click handler works!')
+  function stateChanger() {
+    this.setState({
+      currentPage : 2
+    });
+  }
+  stateChanger();
+  render()
 };
 
 
