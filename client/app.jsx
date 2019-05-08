@@ -5,14 +5,15 @@ class App extends React.Component {
     constructor(props) {
        super(props);
        this.state = {
+        //    currentPage : 
        }
     }
-
+//figure out conditional rendering (use state)
     render() {
        return (
           <div>
               Crew's Stuff Store
-             <FormOne/>
+             <FormThree/>
           </div>
        );
     }
@@ -50,7 +51,7 @@ class App extends React.Component {
             <input type="password" name="name" />
           </label>
           <br></br> <br></br>
-            <input id="formOneSubmit" type="submit" value="Submit" />
+            <input id="formOneSubmit" type="submit" value="Continue to next step" onClick={submitFormOne} />
         </form>
       </div>
     );
@@ -82,7 +83,7 @@ class App extends React.Component {
             <input type="tel" name="name" maxLength= "10" />
           </label>
           <br></br> <br></br>
-            <input id="formTwoSubmit" type="submit" value="Submit" />
+            <input id="formTwoSubmit" type="submit" value="Continue to next step" onClick={submitFormTwo} />
         </form>
       </div>
     );
@@ -115,12 +116,63 @@ function FormThree(props) {
             <input type="text" name="name" maxLength= "5" />
           </label>
           <br></br> <br></br>
-            <input id="formThreeSubmit" type="submit" value="Submit" />
+            <input id="formThreeSubmit" type="submit" value="Submit Payment" onClick={submitFormThree} />
         </form>
       </div>
     );
   }
 
+
+  /*--------------------------------------------------
+------------First Continue Button-
+---------------------------------------------------*/
+const submitFormOne = () => {
+  //will invoke get request
+   //then it'll render the second form
+};
+
+
+
+
+  /*--------------------------------------------------
+------------Second Continue Button-
+---------------------------------------------------*/
+const submitFormTwo = () => {
+  //will invoke get request
+   //then it'll render the second form
+};
+
+
+
+
+  /*--------------------------------------------------
+------------Submit Payment Button-
+---------------------------------------------------*/
+const submitFormThree = () => {
+
+};
+
+
+
+  /*--------------------------------------------------
+------------First Form POST req-
+---------------------------------------------------*/
+
+
+
+
+
+  /*--------------------------------------------------
+------------Second Form POST Req-
+---------------------------------------------------*/
+
+
+
+
+
+  /*--------------------------------------------------
+------------Submit Payment POST Req-
+---------------------------------------------------*/
 
 
 
